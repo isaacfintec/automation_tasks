@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "ES2018",
+    "module": "CommonJS",
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "strict": false,
+    "types": ["node"],
+    "sourceMap": true,
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@core/*": ["./src/core/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "lib"]
+}
