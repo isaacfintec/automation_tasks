@@ -5,10 +5,11 @@ class TodoistScrapping extends PuppeteerScraping {
   readonly URL: string = 'https://app.todoist.com/auth/login';
 
   private async _login() {
-    const { TODO_USERNAME, TODO_PASSWORD } = env;
     const self = this;
-    const page = self.page;
     try {
+      const { TODO_USERNAME, TODO_PASSWORD } = env;
+      if (!TODO_PASSWORD || !TODO_USERNAME) throw new Error('credentials are required');
+      const page = self.page;
       await page.goto(self.URL);
       await page.setViewport({ width: 1080, height: 1024 });
 
